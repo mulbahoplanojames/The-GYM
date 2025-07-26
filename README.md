@@ -1,6 +1,6 @@
-# The GYM - Programming Learning Repository
+# The GYM Training - Programming Learning Repository
 
-Welcome to The GYM, your dedicated space for comprehensive web development learning and practice. This repository is organized to help you systematically learn and master various aspects of web development, from fundamentals to advanced concepts.
+Welcome to The GYM Training, This is my dedicated space for comprehensive web development learning and practice. This repository is organized to help me systematically learn and master various aspects of web development, from fundamentals to advanced concepts.
 
 ## Repository Structure
 
@@ -18,10 +18,6 @@ GYM/
 │   ├── Basics/
 │   ├── Advanced/
 │   └── Animations/
-├── Testing/
-│   ├── Unit/
-│   ├── Integration/
-│   └── E2E/
 ├── Projects/
 │   ├── Beginner/
 │   ├── Intermediate/
