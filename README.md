@@ -1,7 +1,5 @@
 # The GYM - Programming Learning Repository
 
-Add some folders and files in the ES6+ that cover all concepts on ES6+, and do the same for DOM, Advanced, and Fundamentals.
-
 Welcome to The GYM, your dedicated space for comprehensive web development learning and practice. This repository is organized to help you systematically learn and master various aspects of web development, from fundamentals to advanced concepts.
 
 ## Repository Structure
