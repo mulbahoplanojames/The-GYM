@@ -28,5 +28,6 @@ console.log(elements);
 
 console.log("-----------------");
 const productCard = document.getElementById("product-cards");
-const cards = productCard.querySelectorAll(".card");
-console.log(cards);
+const cards = productCard.querySelector(".card");
+console.log("parentNode", cards.parentNode);
+console.log("ChildrenNode", productCard.children);
