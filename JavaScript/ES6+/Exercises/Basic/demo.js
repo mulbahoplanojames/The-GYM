@@ -1,1 +1,2 @@
-// This is a demo file for basic exercises
+console.log("first");
+console.log("second");

@@ -135,3 +135,15 @@ for (let item of h2) {
   item.style.fontSize = "24px";
   item.style.color = "purple";
 }
+
+// Difference between Node and HTMLCollection
+const nodeList = document.querySelectorAll("li"); // Static
+const htmlCollection = document.getElementsByTagName("li"); // Live
+
+// Add a new list item
+const newItem = document.createElement("li");
+newItem.textContent = "Item 3";
+document.getElementById("myList").appendChild(newItem);
+
+console.log("NodeList:", nodeList.length); // Still 2
+console.log("HTMLCollection:", htmlCollection.length); // Now 3
