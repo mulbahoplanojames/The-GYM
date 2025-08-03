@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating Elements using the DOM</title>
+    <style>
+      #comment-wripper {
+        padding: 2rem;
+        border: 4px dotted black;
+        margin-bottom: 2rem;
+        display: flex;
+        gap: 30px;
+      }
+      .card {
+        border: 3px solid red;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="comment-wripper"></div>
+
+    <form>
+      <p>
+        <label for="commentTitle">Title</label>
+        <input type="text" name="title" id="title" />
+      </p>
+      <p>
+        <label for="commentDescription">Description</label>
+        <textarea required name="description" id="description"></textarea>
+      </p>
+      <button id="addComment" type="submit">Add Comment</button>
+    </form>
+
+    <hr />
+    <script src="/JavaScript/DOM/Exercises/Basic/js/creating-elements.js"></script>
+  </body>
+</html>
