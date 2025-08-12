@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Creating Elements using the DOM</title>
+
+    <script>
+      document.body.style.backgroundColor = "purple";
+    </script>
     <style>
       #comment-wripper {
         padding: 2rem;
@@ -34,6 +38,24 @@
     </form>
 
     <hr />
+
+    <hr />
+    <form id="myForm"></form>
+
+    <hr />
+
+    <!-- remove child  -->
+    <div id="parent" style="color: red">
+      <p class="child-1">child 1</p>
+      <p class="child-2">child 2</p>
+      <p class="child-3">child 3</p>
+      <p class="child-4">child 4</p>
+    </div>
+
+    <div id="main" data-progress="pending" data-value="10%"></div>
+
+    <script></script>
+
     <script src="/JavaScript/DOM/Exercises/Basic/js/creating-elements.js"></script>
   </body>
 </html>

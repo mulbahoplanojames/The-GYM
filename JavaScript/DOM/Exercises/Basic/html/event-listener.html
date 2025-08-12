@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Listener</title>
+    <style>
+      .grandParent {
+        background: red;
+        width: 400px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .parent {
+        background: blue;
+        width: 300px;
+        height: 200px;
+        padding: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .child {
+        background: green;
+        width: 200px;
+        height: 100px;
+        padding: 3px;
+      }
+    </style>
+  </head>
+  <body onload="alert('page load successfully')">
+    <nav id="nav-links">
+      <li>Home</li>
+      <li>About</li>
+      <li>Service</li>
+    </nav>
+
+    <div class="grandParent">
+      <div class="parent">
+        Parent
+        <div class="child" style="display: none">Child</div>
+      </div>
+    </div>
+    <script src="/JavaScript/DOM/Exercises/Basic/js/event-listener.js"></script>
+  </body>
+</html>

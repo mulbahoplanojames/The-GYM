@@ -89,13 +89,52 @@ document.body.appendChild(section);
 // append each option to the select element
 
 const select = document.createElement("select");
-const option = document.createElement("option");
+const Form = document.querySelector("#myForm");
 
-const options = [
+const countryOptions = [
   "Liberia",
   "Rwanda",
   "SOuth Sudan",
   "Uganda",
   "Gabon",
   "Congo",
+  "America",
 ];
+
+const mainOptions = countryOptions.map((optionItem) => {
+  const option = document.createElement("option");
+  option.textContent = optionItem;
+  // console.log(option.textContent);
+  return option;
+});
+
+mainOptions.forEach((option) => {
+  select.appendChild(option);
+});
+
+Form.append(select);
+
+// remove child test
+const Parent = document.querySelector("#parent");
+const Child1 = document.querySelector(".child-1");
+const Child2 = document.querySelector(".child-2");
+const Child3 = document.querySelector(".child-3");
+console.log(Parent.removeChild(Child1));
+console.log(Child2.remove());
+
+console.log((Parent.style.cssText = "color:blue; background:lightgray"));
+
+Child1.classList.add("hello", "play");
+console.log(Child1);
+Child1.classList.remove("play");
+console.log(Child1);
+
+// console.log(Parent.attributes);
+
+// for (let attr of Parent.attributes) {
+//   console.log(`${attr.name} = ${attr.value}`);
+// }
+let bar = document.querySelector("#main");
+bar.setAttribute("class", "wripper");
+bar.setAttribute("name", "parent-wripper");
+console.log(bar.attributes);
