@@ -138,3 +138,16 @@ let bar = document.querySelector("#main");
 bar.setAttribute("class", "wripper");
 bar.setAttribute("name", "parent-wripper");
 console.log(bar.attributes);
+
+console.log("-------------------------------------------");
+const constName1 = "James";
+console.log(constName1);
+let letname1 = "Oplan";
+console.log(letname1);
+let letname2;
+console.log(letname2);
+
+console.log(varName1);
+var varName1 = "Oplan";
+console.log(varName1);
+var varName2;

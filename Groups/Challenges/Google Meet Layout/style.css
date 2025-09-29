@@ -1,0 +1,217 @@
+:root {
+  --primary-clr: #78350f;
+  /* --primary-clr: #fb4d17; */
+}
+
+/* Header  */
+main {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  width: 100%;
+}
+
+.sidebar {
+  grid-column: span 2;
+  padding: 0px 6px;
+  background: #fb4d17;
+}
+
+.faq-site-space {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
+  gap: 10px;
+}
+
+.faq-site-icon-wripper {
+  padding: 0.4rem;
+  background: white;
+  height: 45px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq-site-icon {
+  background: black;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+}
+
+.workspace-title {
+  margin-top: 1.5rem;
+}
+
+.pin-workspace-tabs-wripper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.pin-workspace-tabs {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+#header-main {
+  background: white;
+  grid-column: span 10;
+}
+
+#header {
+  /* background: purple; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5% 1%;
+}
+
+.header-icons-wripper,
+.extention-wripper {
+  display: flex;
+  gap: 5px;
+}
+
+.header-icons,
+.extention-01 {
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+}
+
+.extention-01 {
+  background: lightpink;
+}
+
+.header-icons {
+  background: lightblue;
+}
+
+.search-bar {
+  border-radius: 5px;
+  padding: 0.8rem 0.4rem;
+  background: lightgreen;
+  width: 60%;
+}
+
+#main-content {
+  width: 100%;
+  height: 100%;
+  background: var(--primary-clr);
+  padding: 1rem;
+}
+
+.window {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background: yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.window-icon {
+  width: 30px;
+  height: 30px;
+  background: black;
+  border-radius: 5px;
+}
+
+.callers-wripper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.caller {
+  background: green;
+  height: 300px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.caller-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mac {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: blue;
+  border-radius: 50px;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mac-icon {
+  width: 20px;
+  height: 20px;
+  background: black;
+  border-radius: 10px;
+}
+
+.call-settings-menu {
+  width: 100%;
+  /* background: white; */
+  margin-top: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.time {
+  padding: 10px 0.9rem;
+  /* background: palegreen; */
+}
+
+.time span {
+  font-size: 18px;
+  color: white;
+}
+
+.call-settings {
+  padding: 10px 0.9rem;
+  /* background: palevioletre  d; */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.call-setting {
+  width: 45px;
+  height: 45px;
+  background: white;
+  border-radius: 5px;
+}
+
+.personal-settings {
+  padding: 10px 0.9rem;
+  /* background: peru; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.personal-setting {
+  width: 25px;
+  height: 25px;
+  background: white;
+  border-radius: 5px;
+}

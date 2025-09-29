@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selecting Dom Elements</title>
+
+    <style>
+      .section-1,
+      .section-2,
+      .section-3 {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+      }
+      .section-1 {
+        background: lightblue;
+      }
+
+      .section-2 {
+        background: lightcoral;
+      }
+
+      .section-3 {
+        background: lightgoldenrodyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="section-1">
+      <h3>Select the button element on the page</h3>
+      <button type="button" id="button">OFF</button>
+    </section>
+
+    <section id="wrapper" class="section-2">
+      <h3>Query descendent HTML elements</h3>
+      <input type="text" value="OFF" readonly />
+      <button type="button">Click Me</button>
+
+      <ul id="list"></ul>
+    </section>
+
+    <section class="section-3">
+      <h3>Select multiple HTML elements</h3>
+      <ul id="list">
+        <li>OFF</li>
+        <li>OFF</li>
+        <li>OFF</li>
+        <li>OFF</li>
+        <li>OFF</li>
+        <li>OFF</li>
+      </ul>
+    </section>
+
+    <script src="/JavaScript/DOM/Exercises/Selecting-Elements/select.js"></script>
+  </body>
+</html>

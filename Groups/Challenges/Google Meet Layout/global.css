@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-clr: #78350f;
+}
+
+body {
+  background: var(--primary-clr);
+  width: 100%;
+  /* height: 100dvh; */
+}
