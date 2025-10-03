@@ -67,8 +67,60 @@ const getCalc = (num1, num2) => {
   return [num1 + num2, num1 * num2, num1 - num2, num1 % num2];
 };
 const [addition, multiplication, subtraction, modulous] = getCalc(10, 20);
-console.log(`The Sum is ${addition}
-The product is ${multiplication}
-The difference is ${subtraction}
-The reminder is ${modulous} 
-`);
+// console.log(`The Sum is ${addition}
+// The product is ${multiplication}
+// The difference is ${subtraction}
+// The reminder is ${modulous}
+// `);
+
+// note: Arrow + Default Parameters
+const greet = (name = "Guest") => {
+  return `Hello ${name}!`;
+};
+// console.log(greet());
+
+// note : Arrow + Template Literals
+
+const getUserInfo = ({
+  firstName = "Guest",
+  lastName = "Guest",
+  department = "No Department",
+  rollNumber = "Not avaliable",
+} = {}) => {
+  const message = `Hi, Meet ${firstName} ${lastName} one of our best student from the department of ${department} with the roll number of ${rollNumber}`;
+  return message;
+};
+// console.log(
+//   getUserInfo({
+//     firstName: "Wilma",
+//     lastName: "William",
+//     department: "Software Engineering",
+//     rollNumber: "2023293940",
+//   })
+// );
+// console.log(getUserInfo());
+
+// note : Arrow + Array Map
+const doubleNumber = (numbers) => {
+  const double = numbers.map((number) => number * 2);
+  return double;
+};
+// console.log(doubleNumber([2, 4, 6, 8, 10]));
+
+// note: Arrow + Filter
+const returnEvens = (numbers) => {
+  return numbers.filter((number) => number % 2 === 0);
+};
+// console.log(returnEvens([1, 2, 3, 4, 5, 6, 9, 11, 15, 12]));
+
+// note : Arrow + Reduce;
+const getTotal = (numbers) => {
+  return numbers.reduce((total, num) => total + num, 0);
+};
+// console.log(getTotal([5, 10, 15, 20]));
+
+// note : Arrow + Spread Operator
+const returnMax = (...numbers) => {
+  return `The Maximum number is ${Math.max(...numbers)}`;
+};
+console.log(returnMax(12, 4, 5, 6, 8, 9));
