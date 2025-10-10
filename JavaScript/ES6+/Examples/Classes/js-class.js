@@ -106,58 +106,18 @@ class Car extends Vehicle {
 const KIV = new Car("KIV 2025", 4);
 console.log(KIV.make());
 
-const obj = {
-  name: "Oplano",
-  self: this,
-  logLater() {
-    // const self = this; // Capture this manually
-    // setTimeout(() => {
-    const test = () => {
-      console.log("Arrow with captured this:", this.name);
-    };
+// Note : Write a Todo class with a constructor taking a title and completed (default false). Add a toggle method to flip completed. Create and toggle an instance.
 
-    test(); // }, 1000);
-  },
-
-  hello: () => {
-    console.log(this.self);
-  },
-};
-
-obj.logLater();
-obj.hello();
-
-class Parent {
-  constructor(name, age, gender) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
+class Todo {
+  constructor(title, completed = false) {
+    this.title = title;
+    this.completed = completed;
   }
 
-  introduce() {
-    return `Hello, i am ${this.name} a parent`;
-  }
-
-  sleep() {
-    return `Please, i am sleeping`;
+  toggle() {
+    return (this.completed = true);
   }
 }
 
-class Child extends Parent {
-  constructor(name, age, gender, toys) {
-    super(name, age, gender);
-    this.toys = toys;
-  }
-
-  introduce() {
-    return `Hello, i am ${this.name} a Child and i am ${this.age} years old`;
-  }
-}
-const daddy = new Parent("Daddy", 34, "male");
-console.log(daddy.introduce());
-
-console.log(`
-`);
-
-const billa = new Child("Billa", 12, "male", ["car", "banana"]);
-console.log(billa.introduce());
+let toggled = new Todo();
+console.log(toggled.toggle());
