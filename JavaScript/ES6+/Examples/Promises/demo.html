@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Woriking with promises</title>
+  </head>
+  <body>
+    <!-- <script src="/JavaScript/ES6+/Examples/Promises/promise-01.js"></script> -->
+
+    <script>
+      async function sayJoke(apiUrl, jokeId) {
+        // use mocked `fetch(url)`
+
+        const fetchJokes = await fetch(apiUrl)
+          .then((response) => response.json())
+          .then((data) => data.value)
+          .catch((error) => console.error(error));
+
+        const joke = await Promise.resolve(fetchJokes).then((jokes) =>
+          jokes.find((joke) => joke.id === jokeId)
+        );
+
+        return {
+          saySetup() {
+            return joke.setup;
+          },
+          sayPunchLine() {
+            return joke.punchline;
+          },
+        };
+      }
+
+      console.log(sayJoke("https://api.chucknorris.io/jokes/random", 1));
+      console.log(sayJoke("https://api.chucknorris.io/jokes/random", 2));
+    </script>
+  </body>
+</html>
