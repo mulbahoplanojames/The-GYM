@@ -34,5 +34,3 @@ Feel free to:
 ## License
 
 This repository is for personal learning and practice purposes. All content is original work created for educational purposes.
-
-Jokes you've been 'awaiting' for ... promise
