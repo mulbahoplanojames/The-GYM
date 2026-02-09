@@ -34,3 +34,26 @@ Feel free to:
 ## License
 
 This repository is for personal learning and practice purposes. All content is original work created for educational purposes.
+
+// const contollers = new AbortController();
+// const singal = contollers.abort();
+
+// const fetchData = async () => {
+// try {
+// const response = await fetch("https://jsonplaceholder.typicode.com/users", {
+// signal,
+// });
+// const data = await response.json();
+// console.log(data);
+// } catch (error) {
+// if (error.name === "AbortError") {
+// console.log("Request aborted");
+// } else {
+// console.error("Error:", error);
+// }
+// }
+// };
+
+// setTimeout(() => {
+// contollers.abort();
+// }, 3000);
