@@ -315,3 +315,8 @@ Keys are strings
 Values are strings
 (Hint: Index signatures)
 */
+
+let n: "hi" = "hi";
+
+// n = "jsmd"
+// console.log(n);
