@@ -1,0 +1,52 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "name": "Tom and Jerry",
+      "description": "A classic animated comedy about the endless rivalry between Tom the cat and Jerry the mouse.",
+      "yearPublished": 1940,
+      "image": "https://i.pinimg.com/736x/22/90/eb/2290eb5906143c763084b31f1c9132d9.jpg",
+      "likes": 9823
+    },
+    {
+      "id": 2,
+      "name": "Family Guy",
+      "description": "An animated sitcom that follows the dysfunctional Griffin family and their absurd adventures.",
+      "yearPublished": 1999,
+      "image": "https://i.pinimg.com/736x/f5/46/8e/f5468eaacb6027084fc423ac399a138d.jpg",
+      "likes": 7541
+    },
+    {
+      "id": 3,
+      "name": "Puss in Boots",
+      "description": "A swashbuckling animated adventure following the legendary sword-fighting cat from the Shrek universe.",
+      "yearPublished": 2011,
+      "image": "https://i.pinimg.com/1200x/53/82/06/538206d65e2a7a7bd6c3a705c6b79e35.jpg",
+      "likes": 6432
+    },
+    {
+      "id": 4,
+      "name": "The Adventures of Tintin",
+      "description": "An animated action adventure about the young reporter Tintin traveling the world solving mysteries.",
+      "yearPublished": 2011,
+      "image": "https://i.pinimg.com/736x/7b/16/fc/7b16fc14155d20d424f54a810faa07d3.jpg",
+      "likes": 4210
+    },
+    {
+      "id": 5,
+      "name": "The Lion King",
+      "description": "Disney's animated classic about Simba, a lion prince who must reclaim his rightful place as king.",
+      "yearPublished": 1994,
+      "image": "https://upload.wikimedia.org/wikipedia/en/3/3d/The_Lion_King_poster.jpg",
+      "likes": 11234
+    },
+    {
+      "id": 6,
+      "name": "Samson",
+      "description": "An animated story inspired by the biblical hero Samson and his journey of strength and redemption.",
+      "yearPublished": 2018,
+      "image": "https://i.pinimg.com/736x/4c/c3/69/4cc369bb75a38d50ac029d087e4847ce.jpg",
+      "likes": 2987
+    }
+  ]
+}

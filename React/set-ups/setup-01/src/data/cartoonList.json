@@ -1,0 +1,34 @@
+{
+  "cartoonMovies": [
+    {
+      "title": "Tom and Jerry",
+      "year": 1940,
+      "image": "/tom_jerry_logo.jpg",
+      "description": "A classic animated series featuring the rivalry between Tom the cat and Jerry the mouse."
+    },
+    {
+      "title": "The Lion King",
+      "year": 1994,
+      "image": "/lion_king.jpg",
+      "description": "A young lion prince flees his kingdom only to learn the true meaning of responsibility and bravery."
+    },
+    {
+      "title": "Family Guy",
+      "year": 1999,
+      "image": "/family_guy.jpg",
+      "description": "An animated sitcom about the adventures of the Griffin family."
+    },
+    {
+      "title": "Puss in Boots",
+      "year": 2011,
+      "image": "/puss_in_boots.jpg",
+      "description": "A story about the swashbuckling feline hero, Puss in Boots."
+    },
+    {
+      "title": "The Adventure",
+      "year": 2005,
+      "image": "/adventure.jpg",
+      "description": "An animated film about a group of friends embarking on a thrilling journey."
+    }
+  ]
+}
