@@ -1,5 +1,6 @@
 import { Trash } from "lucide-react";
-import React, { useState } from "react";
+import React, { use, useState } from "react";
+import { type Cart, CartContext } from "../../context/cart-context";
 
 interface TaskType {
   id: number;
@@ -9,6 +10,16 @@ interface TaskType {
 export default function StateDemo2() {
   const [tasks, setTasks] = useState<TaskType[]>([]);
   const [inputValue, setInputValue] = useState("");
+  const [showCart, setShowCart] = useState(false);
+
+  let cart: Cart | null = null;
+  if (showCart) {
+    cart = use(CartContext);
+  }
+
+  const toggleCart = () => {
+    setShowCart((prev) => !prev);
+  };
 
   const handleAddTodo = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,7 +40,7 @@ export default function StateDemo2() {
   };
 
   return (
-    <div className="bg-green-400 p-20  gap-6">
+    <div className="bg-green-400 p-20  ">
       <form
         onSubmit={handleAddTodo}
         className="flex gap-2 justify-center container mx-auto "
@@ -48,7 +59,27 @@ export default function StateDemo2() {
         >
           Add
         </button>
+        <button
+          type="button"
+          onClick={toggleCart}
+          className="bg-blue-500 text-white px-5 py-2 rounded-2xl cursor-pointer hover:opacity-80"
+        >
+          {showCart ? "Hide Cart" : "Show Cart"}
+        </button>
       </form>
+
+      {showCart && cart && (
+        <div className="mt-8 bg-white p-4 rounded-xl shadow-lg">
+          <h2 className="text-xl font-bold mb-4">Cart Items</h2>
+          <ul>
+            {cart.map((item) => (
+              <li key={item.id} className="mb-2 border-b pb-1">
+                {item.title} - ${item.price}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       <div className="mt-8">
         {tasks.map((task) => (

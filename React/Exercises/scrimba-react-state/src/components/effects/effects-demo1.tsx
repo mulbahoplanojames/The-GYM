@@ -18,9 +18,7 @@ export default function EffectsDemo1() {
   useEffect(() => {
     const fetchDonors = async () => {
       try {
-        const response = await fetch(
-          "https://lifelineapi-93c3.onrender.com/api/donors",
-        );
+        const response = await fetch("/api/donors");
         const result = await response.json();
         setDonors(result.data);
         // console.log(result);
@@ -32,6 +30,8 @@ export default function EffectsDemo1() {
     };
     fetchDonors();
   }, []);
+
+  // console.log(donors);
 
   // Filter donors based on city and blood type
   const filteredDonors = donors.filter((donor) => {
@@ -49,15 +49,15 @@ export default function EffectsDemo1() {
     ...new Set(donors.map((donor) => donor.blood_type)),
   ].sort();
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      console.log("Interval");
-    }, 1000);
-    return () => {
-      console.log("Cleaning up interval");
-      clearInterval(interval);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     console.log("Interval");
+  //   }, 1000);
+  //   return () => {
+  //     console.log("Cleaning up interval");
+  //     clearInterval(interval);
+  //   };
+  // }, []);
 
   return (
     <div className="bg-orange-600 p-20 text-white">
@@ -119,7 +119,7 @@ export default function EffectsDemo1() {
         </div>
       ) : (
         <div className="grid grid-cols-4 gap-4 mt-10">
-          {filteredDonors.slice(0, 10).map((donor) => (
+          {filteredDonors.slice(0, 12).map((donor) => (
             <div key={donor.id} className="bg-white p-5 rounded-lg shadow-md">
               <h1 className="text-lg font-bold text-gray-900">{donor.name}</h1>
               <p className="text-sm text-gray-500">{donor.city}</p>

@@ -10,4 +10,12 @@ export default defineConfig({
     babel({ presets: [reactCompilerPreset()] }),
     tailwindcss(),
   ],
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://lifelineapi-93c3.onrender.com",
+        changeOrigin: true,
+      },
+    },
+  },
 });
