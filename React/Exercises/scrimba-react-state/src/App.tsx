@@ -13,6 +13,7 @@ import ShoppingCartContextProvider from "./context/reducer-shopping-cart-context
 import UserContextProvider from "./context/user-context.tsx";
 import { padsData } from "./data/pads.ts";
 import UseLayoutEffectMain from "./components/useLayoutEffect/useLayoutEffect-main.tsx";
+import UsememoMain from "./components/useMemo/usememo-main.tsx";
 
 export default function App() {
   return (
@@ -35,6 +36,8 @@ export default function App() {
               <ReducerMain />
               <div className="border-5 border-red-500 my-5"></div>
               <UseLayoutEffectMain />
+              <div className="border-5 border-slate-800 my-5"></div>
+              <UsememoMain />
             </main>
           </div>
         </UserContextProvider>
