@@ -1,5 +1,11 @@
 import FragmentsCom from "components/fragments-com";
 import type { Route } from "./+types/home";
+import { Profiler, Suspense, type ProfilerOnRenderCallback } from "react";
+import ProfiderCom from "components/profiler-com";
+import ExpensiveComponent from "components/expensive-component";
+import StrictMode from "components/strict-mode";
+import SuspenseCom from "components/suspense-com";
+import ActivityCom from "components/activity-com";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -7,6 +13,24 @@ export function meta({}: Route.MetaArgs) {
     { name: "description", content: "Welcome to React Router!" },
   ];
 }
+
+const onRenderCallback: ProfilerOnRenderCallback = (
+  id,
+  phase,
+  actualDuration,
+  baseDuration,
+  startTime,
+  commitTime,
+) => {
+  console.log("id", id);
+  console.log("phase", phase);
+  console.log("actualDuration", actualDuration);
+  console.log("baseDuration", baseDuration);
+  console.log("startTime", startTime);
+  console.log("commitTime", commitTime);
+};
+
+// console.log(onRenderCallback);
 
 export default function Home() {
   return (
@@ -18,7 +42,18 @@ export default function Home() {
           Js{" "}
         </p>
       </div>
-      <FragmentsCom />
+      <Profiler id="fragments-com" onRender={onRenderCallback}>
+        <FragmentsCom />
+      </Profiler>
+      <Profiler id="profider-com" onRender={onRenderCallback}>
+        <ProfiderCom />
+      </Profiler>
+      <Profiler id="ExpensiveComponent" onRender={onRenderCallback}>
+        <ExpensiveComponent num={10} />
+      </Profiler>
+      <StrictMode />
+      <SuspenseCom />
+      <ActivityCom />
     </div>
   );
 }
