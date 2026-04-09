@@ -1,4 +1,4 @@
-import { useReducer, useState, type FormEvent } from "react";
+import React, { useEffect, useReducer, useState, type FormEvent } from "react";
 
 type Notes = {
   id: string;
@@ -30,10 +30,37 @@ function noteReducer(state: Notes[], action: Action): Notes[] {
 
 export default function NotesApp() {
   const [state, dispatch] = useReducer(noteReducer, [] as Notes[]);
+  const [newTitle, setNewTitle] = useState("");
+  const [newContent, setNewContent] = useState("");
+
+  useEffect(() => {}, []);
+
+  const handleAddNote = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!newContent.trim() && !newContent.trim()) {
+      alert("Please add a title and content for your note");
+    }
+
+    const newNote: Notes = {
+      id: crypto.randomUUID(),
+      title: newTitle,
+      content: newContent,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    };
+
+    dispatch({ type: "ADD_NOTE", payload: newNote });
+    setNewContent("");
+    setNewTitle("");
+  };
+
+  const handleDelete = (id: string) => {
+    dispatch({ type: "DELETE_NOTE", payload: { id } as Notes });
+  };
 
   return (
     <div className="max-w-4xl mx-auto p-8 space-y-10">
-      {/* Header & Form */}
       <section className="bg-yellow-900/40 border-yellow-700/50 border-2 rounded-2xl shadow-2xl p-8 backdrop-blur-sm transition-all hover:border-yellow-600/60">
         <div className="flex items-center gap-3 mb-8">
           <svg
@@ -95,7 +122,6 @@ export default function NotesApp() {
           </button>
         </form>
       </section>
-      {/* Notes Grid */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {state.length === 0 ? (
           <div className="col-span-full py-20 text-center space-y-4">
