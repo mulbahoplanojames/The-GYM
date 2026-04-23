@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext } from "react";
 
 export type Cart = {
   id: number;
@@ -12,23 +12,10 @@ export type Cart = {
   images: string[];
 }[];
 
-export const CartContext = createContext<Cart | null>(null);
-
-export default function CartContextProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const [cart, setCart] = useState<Cart>([]);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const res = await fetch("https://dummyjson.com/products");
-      const data = await res.json();
-      setCart(data.products);
-      // console.log(data.products);
-    };
-    fetchProducts();
-  }, []);
-  return <CartContext.Provider value={cart}>{children}</CartContext.Provider>;
-}
+export const CartContext = createContext<{
+  cart: Cart;
+  setCart: React.Dispatch<React.SetStateAction<Cart>>;
+}>({
+  cart: [],
+  setCart: () => {},
+});

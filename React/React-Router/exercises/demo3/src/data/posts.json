@@ -1,0 +1,107 @@
+[
+  {
+    "id": "1",
+    "title": "Getting Started with React",
+    "category": "react",
+    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
+    "content": "React is a powerful JavaScript library used for building fast and interactive user interfaces. It allows developers to create reusable UI components and manage state efficiently, making large-scale applications easier to maintain and scale."
+  },
+  {
+    "id": "2",
+    "title": "Understanding React Router",
+    "category": "react",
+    "image": "https://images.unsplash.com/photo-1618477247222-acbdb0e159b3",
+    "content": "React Router enables navigation in single-page applications without reloading the page. It helps map URLs to components, making it possible to build multi-page experiences in React while maintaining performance and user experience."
+  },
+  {
+    "id": "3",
+    "title": "CSS Grid Layout Mastery",
+    "category": "css",
+    "image": "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2",
+    "content": "CSS Grid is a two-dimensional layout system that allows developers to design complex web layouts with rows and columns. It provides full control over alignment, spacing, and responsiveness for modern web design."
+  },
+  {
+    "id": "4",
+    "title": "Flexbox for Modern Layouts",
+    "category": "css",
+    "image": "https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19",
+    "content": "Flexbox is a one-dimensional layout model that makes it easy to align and distribute space among items in a container. It is ideal for building responsive navigation bars, card layouts, and flexible UI components."
+  },
+  {
+    "id": "5",
+    "title": "Modern JavaScript ES6 Features",
+    "category": "javascript",
+    "image": "https://images.unsplash.com/photo-1581276879432-15a8c9d6f1b5",
+    "content": "ES6 introduced modern JavaScript features such as arrow functions, let/const, template literals, and destructuring. These improvements make code more readable, maintainable, and efficient."
+  },
+  {
+    "id": "6",
+    "title": "Async/Await in JavaScript",
+    "category": "javascript",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+    "content": "Async/await simplifies working with asynchronous code by allowing developers to write promise-based logic in a synchronous style. It improves readability and makes error handling more structured."
+  },
+  {
+    "id": "7",
+    "title": "Tailwind CSS Introduction",
+    "category": "css",
+    "image": "https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19",
+    "content": "Tailwind CSS is a utility-first framework that allows developers to build modern designs directly in HTML using predefined classes. It speeds up development and ensures design consistency."
+  },
+  {
+    "id": "8",
+    "title": "React State Management",
+    "category": "react",
+    "image": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f",
+    "content": "State management in React allows components to respond to user interactions and data changes. Understanding state is essential for building dynamic and interactive applications."
+  },
+  {
+    "id": "9",
+    "title": "Introduction to Node.js",
+    "category": "backend",
+    "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
+    "content": "Node.js is a runtime environment that allows JavaScript to run on the server. It is widely used for building scalable backend services and APIs."
+  },
+  {
+    "id": "10",
+    "title": "Express.js Routing Basics",
+    "category": "backend",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+    "content": "Express.js simplifies backend development by providing routing, middleware, and request handling. It is one of the most popular frameworks for building RESTful APIs."
+  },
+  {
+    "id": "11",
+    "title": "TypeScript Fundamentals",
+    "category": "typescript",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+    "content": "TypeScript adds static typing to JavaScript, helping developers catch errors early and build more reliable applications. It improves scalability in large projects."
+  },
+  {
+    "id": "12",
+    "title": "Interfaces in TypeScript",
+    "category": "typescript",
+    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
+    "content": "Interfaces define the structure of objects in TypeScript. They help enforce consistency and improve code readability and maintainability."
+  },
+  {
+    "id": "13",
+    "title": "MongoDB Overview",
+    "category": "database",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+    "content": "MongoDB is a NoSQL database that stores data in flexible JSON-like documents. It is designed for scalability, performance, and modern application development."
+  },
+  {
+    "id": "14",
+    "title": "Git Basics for Developers",
+    "category": "git",
+    "image": "https://images.unsplash.com/photo-1556075798-4825dfaaf498",
+    "content": "Git is a version control system that tracks changes in code and enables collaboration among developers. It is essential for managing software projects efficiently."
+  },
+  {
+    "id": "15",
+    "title": "Git Branching Strategy",
+    "category": "git",
+    "image": "https://images.unsplash.com/photo-1526378722484-bd91ca387e72",
+    "content": "Branching in Git allows developers to work on features, fixes, and experiments independently without affecting the main codebase. It supports collaborative workflows and safe development."
+  }
+]

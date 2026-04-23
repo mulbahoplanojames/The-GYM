@@ -19,24 +19,53 @@ type ACTIONS =
   | { type: "DELETE_TODO"; payload: string }
   | { type: "TOGGLE_TODO"; payload: string };
 
-const todoReducer = (state: Todo[], action: ACTIONS) => {
+const saveTodosToLocalStorage = (todos: Todo[]) => {
+  localStorage.setItem("todos", JSON.stringify(todos));
+};
+
+const loadTodosFromLocalStorage = (): Todo[] => {
+  const stored = localStorage.getItem("todos");
+  if (stored) {
+    try {
+      const parsed = JSON.parse(stored);
+      return parsed.map((todo: Todo & { createdAt: string }) => ({
+        ...todo,
+        createdAt: new Date(todo.createdAt),
+      }));
+    } catch (error) {
+      console.error("Error parsing todos from localStorage:", error);
+      return [];
+    }
+  }
+  return [];
+};
+
+const todoReducer = (state: Todo[], action: ACTIONS): Todo[] => {
+  let newState: Todo[];
+
   switch (action.type) {
     case TODO_ACTIONS.ADD_TODO: {
-      return [...state, action.payload];
+      newState = [...state, action.payload];
+      break;
     }
     case TODO_ACTIONS.DELETE_TODO: {
-      return state.filter((todo) => todo.id !== action.payload);
+      newState = state.filter((todo) => todo.id !== action.payload);
+      break;
     }
     case TODO_ACTIONS.TOGGLE_TODO: {
-      return state.map((todo) =>
+      newState = state.map((todo) =>
         todo.id === action.payload
           ? { ...todo, completed: !todo.completed }
           : todo,
       );
+      break;
     }
     default:
       return state;
   }
+
+  saveTodosToLocalStorage(newState);
+  return newState;
 };
 
 export default function TodoApp() {
@@ -47,7 +76,10 @@ export default function TodoApp() {
     createdAt: new Date(),
     completed: false,
   });
-  const [todoState, dispatch] = useReducer(todoReducer, [] as Todo[]);
+  const [todoState, dispatch] = useReducer(
+    todoReducer,
+    loadTodosFromLocalStorage(),
+  );
   console.log("Todo State", todoState);
 
   const handleAddTodo = (e: React.FormEvent<HTMLFormElement>) => {
@@ -68,6 +100,7 @@ export default function TodoApp() {
         completed: todosContent.completed,
       },
     });
+
     setTodosContent({
       id: "",
       title: "",
@@ -75,7 +108,8 @@ export default function TodoApp() {
       createdAt: new Date(),
       completed: false,
     });
-    console.log(todosContent);
+
+    // console.log(todosContent);
   };
 
   return (
@@ -85,9 +119,8 @@ export default function TodoApp() {
       <form className="" onSubmit={handleAddTodo}>
         <input
           type="text"
-          // required
           placeholder="Add Todo.."
-          className="max-w-4xl min-w-2xl border-2 rounded-2xl outline-none my-3 px-4 py-2"
+          className="w-full border-2 rounded-2xl outline-none my-3 px-4 py-2"
           value={todosContent.title}
           onChange={(e) =>
             setTodosContent({ ...todosContent, title: e.target.value })
@@ -95,9 +128,8 @@ export default function TodoApp() {
         />
         <input
           type="text"
-          // required
           placeholder="Add Todo Category"
-          className="max-w-4xl min-w-2xl border-2 rounded-2xl outline-none my-3 px-4 py-2"
+          className="w-full border-2 rounded-2xl outline-none my-3 px-4 py-2"
           value={todosContent.category}
           onChange={(e) =>
             setTodosContent({ ...todosContent, category: e.target.value })
@@ -111,31 +143,36 @@ export default function TodoApp() {
         </button>
       </form>
 
-      <div>
+      <div className="mt-8">
         {todoState.map((todo) => (
-          <div key={todo.id}>
-            <div
-              className={`${todo.completed ? "line-through text-green-500" : ""}`}
-            >
-              <p>{todo.title}</p>
-              <p>{todo.category}</p>
-              <p>{todo.createdAt.toDateString()}</p>
-              <p>{todo.completed}</p>
+          <div
+            key={todo.id}
+            className={`${todo.completed ? "bg-green-700/50" : "bg-red-700/50"}  flex justify-between items-center p-4 mt-2 rounded-2xl`}
+          >
+            <div className={`flex flex-col gap-1`}>
+              <p className="font-bold text-lg">{todo.title}</p>
+              <p className="text-sm">{todo.category}</p>
+              <p className="text-xs">{todo.createdAt.toDateString()}</p>
+              <p className="text-xs">{todo.completed}</p>
             </div>
-            <button
-              onClick={() =>
-                dispatch({ type: "DELETE_TODO", payload: todo.id })
-              }
-            >
-              Delete
-            </button>
-            <button
-              onClick={() =>
-                dispatch({ type: "TOGGLE_TODO", payload: todo.id })
-              }
-            >
-              Toggle
-            </button>
+            <div className="flex gap-3">
+              <button
+                onClick={() =>
+                  dispatch({ type: "DELETE_TODO", payload: todo.id })
+                }
+                className="bg-red-500 py-2 px-5 rounded-2xl cursor-pointer"
+              >
+                Delete
+              </button>
+              <button
+                onClick={() =>
+                  dispatch({ type: "TOGGLE_TODO", payload: todo.id })
+                }
+                className="bg-blue-500 py-2 px-5 rounded-2xl cursor-pointer"
+              >
+                {todo.completed ? "Undo" : "Complete"}
+              </button>
+            </div>
           </div>
         ))}
       </div>

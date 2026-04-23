@@ -8,7 +8,7 @@ import RefDemo1 from "./components/refs/ref-demo.tsx";
 import Soundpads from "./components/states/soundpads.tsx";
 import StateDemo1 from "./components/states/state-tom-jerry.tsx";
 import StateDemo2 from "./components/states/state-todolist.tsx";
-import CartContextProvider from "./context/cart-context.tsx";
+import CartContextProvider from "./context/cart-context-provider.tsx";
 import ShoppingCartContextProvider from "./context/reducer-shopping-cart-context.tsx";
 import UserContextProvider from "./context/user-context.tsx";
 import { padsData } from "./data/pads.ts";
