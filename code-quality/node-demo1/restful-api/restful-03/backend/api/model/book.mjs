@@ -10,7 +10,6 @@ const bookSchema = mongoose.Schema({
   title: { type: String, required: true, trim: true },
   author: { type: String, required: true, trim: true },
   category: { type: String, required: true, trim: true },
-  publishedDate: { type: Date, required: true },
   availableCopies: { type: Number, required: true },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
