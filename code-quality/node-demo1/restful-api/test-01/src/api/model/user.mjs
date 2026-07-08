@@ -36,6 +36,13 @@ const userSchema = new mongoose.Schema(
         return this.role === "doctor";
       },
     },
+    department: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "MedicalDepartment",
+      required: function () {
+        return this.role === "doctor";
+      },
+    },
   },
   {
     timestamps: true,
