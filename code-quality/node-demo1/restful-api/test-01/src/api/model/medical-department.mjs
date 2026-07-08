@@ -12,11 +12,6 @@ const medicalDepartmentSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
-    doctors: {
-      type: [mongoose.Schema.Types.ObjectId],
-      ref: "User",
-      required: true,
-    },
   },
   {
     timestamps: true,
