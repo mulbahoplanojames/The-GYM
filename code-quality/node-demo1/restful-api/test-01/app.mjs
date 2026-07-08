@@ -4,6 +4,7 @@ import cors from "cors";
 import authRoutes from "./src/api/routes/auth.mjs";
 import userRoutes from "./src/api/routes/users.mjs";
 import doctorAvaliabilityRoutes from "./src/api/routes/doctor-avaliability.mjs";
+import medicalDepartmentRoutes from "./src/api/routes/medical-department.mjs";
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use(cors(corsOptions));
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/doctor-avaliability", doctorAvaliabilityRoutes);
+app.use("/medical-departments", medicalDepartmentRoutes);
 
 app.use((request, response, next) => {
   const error = new Error("Not found");
